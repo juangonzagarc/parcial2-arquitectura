@@ -1,4 +1,7 @@
 # 1.A 
+
+Valentina López & Juan Daniel González
+
 ## **Requisitos previos**
 - Se debe tener instalado **Docker** en el sistema. 
 - También es necesario contar con **Maven** o **Gradle** para ejecutar la aplicación, dependiendo de la configuración del proyecto.
