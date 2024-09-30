@@ -5,12 +5,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
-@ActiveProfiles("test")  // Esto garantiza que se use el perfil test
+@ActiveProfiles("test")
+class ApplicationContextTest {
 
-class ParcialApplicationTests {
-
-	@Test
-	void contextLoads() {
-		// Aquí puedes verificar que el contexto carga correctamente
-	}
+    @Test
+    void contextLoads() {
+        // Esta prueba solo verifica si el contexto de la aplicación se carga con el perfil de test
+    }
 }
