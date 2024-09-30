@@ -52,10 +52,4 @@ Esto iniciará la aplicación en el puerto `8081`. La aplicación estará conect
 Una vez que la aplicación esté corriendo, se puede verificar que la conexión a la base de datos MySQL fue exitosa revisando los logs de la aplicación o interactuando con la aplicación para realizar operaciones que afecten la base de datos (por ejemplo, crear un nuevo registro).
 ```
 
-### Explicación del formato:
-- Utilicé `##` para los encabezados principales y `###` para los subtítulos.
-- El texto en **negrita** se representa con `**texto**`.
-- Los bloques de código se encuentran entre ```bash para mostrar los comandos que deben ejecutarse.
-- Los elementos de la lista están precedidos por un guión `-`.
 
-Este formato es estándar para un archivo `README.md` y debería funcionar bien en plataformas como GitHub o cualquier sistema de control de versiones que soporte Markdown.
