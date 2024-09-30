@@ -1,4 +1,5 @@
 package co.edu.unisabana.parcial.service;
+
 import co.edu.unisabana.parcial.controller.dto.CheckpointDTO;
 import co.edu.unisabana.parcial.service.model.Checkin;
 import co.edu.unisabana.parcial.service.model.Checkout;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class CheckpointService {
 
-  private final CheckpointPort checkpointPort;
+  private CheckpointPort checkpointPort;
 
   public void checkin(CheckpointDTO checkpoint) {
     if (checkpoint.dayOfMonth > 30 || checkpoint.dayOfMonth < 1) {
@@ -18,6 +19,7 @@ public class CheckpointService {
     }
     Checkin checkin = new Checkin(checkpoint.facility, checkpoint.driver, checkpoint.dayOfMonth);
     checkpointPort.saveCheckin(checkin);
+
   }
 
   public void checkout(CheckpointDTO checkpoint) {

@@ -34,7 +34,7 @@ public class CheckpointDAO implements CheckpointPort {
 
   @Override
   public void finishCheckin(Checkin checkin) {
-    Checkpoint checkpoint = checkpointRepository.findById(checkin.getId()).get();
+    Checkpoint checkpoint = checkpointRepository.findById((long) checkin.getId()).get();
     checkpoint.setFinalized(true);
     checkpointRepository.save(checkpoint);
   }
