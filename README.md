@@ -8,7 +8,7 @@ Para levantar la base de datos MySQL, se debe ejecutar un contenedor de Docker q
 El comando a ejecutar para levantar el contenedor de MySQL es el siguiente:
 
 ```bash
-docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=root_password -e MYSQL_DATABASE=testdb -e MYSQL_USER=test_user -e MYSQL_PASSWORD=test_password -p 3306:3306 -d mysql:5.7
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=root_password -e MYSQL_DATABASE=testdb -e MYSQL_USER=test_user -e MYSQL_PASSWORD=test_password -p 3306:3306 -d mysql:5.7 ```
 
 `MYSQL_DATABASE`: Define el nombre de la base de datos.
 `MYSQL_USER y MYSQL_PASSWORD`: Se configuran para el acceso a la base de datos.
