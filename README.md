@@ -1,4 +1,4 @@
-
+# 1.A 
 ## **Requisitos previos**
 - Se debe tener instalado **Docker** en el sistema. 
 - También es necesario contar con **Maven** o **Gradle** para ejecutar la aplicación, dependiendo de la configuración del proyecto.
@@ -50,6 +50,7 @@ Esto iniciará la aplicación en el puerto `8081`. La aplicación estará conect
 ### **4. Verificación de la conexión:**
 
 Una vez que la aplicación esté corriendo, se puede verificar que la conexión a la base de datos MySQL fue exitosa revisando los logs de la aplicación o interactuando con la aplicación para realizar operaciones que afecten la base de datos (por ejemplo, crear un nuevo registro).
-```
+
+# 5 
 
 
