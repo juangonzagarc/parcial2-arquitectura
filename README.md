@@ -53,4 +53,28 @@ Una vez que la aplicación esté corriendo, se puede verificar que la conexión 
 
 # 5 
 
+## Crear y ejecutar la imagen Docker del proyecto
 
+### 1. Crear la imagen Docker:
+
+Se debe asegurar que el archivo `Dockerfile` esté presente y correctamente configurado en el directorio raíz del proyecto. Luego, desde la terminal, se ejecuta el siguiente comando para crear la imagen Docker:
+
+```bash
+docker build -t nombre-imagen .
+```
+docker build: Este comando permite construir la imagen Docker.
+-t nombre-imagen: Asigna un nombre a la imagen que se va a crear. Se debe reemplazar nombre-imagen con el nombre que se desee asignar a la imagen.
+.: Indica que la imagen se debe construir utilizando el Dockerfile ubicado en el directorio actual.
+
+2. Ejecutar la imagen Docker:
+Una vez que la imagen ha sido creada correctamente, se puede ejecutar un contenedor basado en dicha imagen usando el siguiente comando:
+
+```bash
+Copiar código
+docker run -p 8081:8081 nombre-imagen
+```
+-p 8081:8081: Este parámetro se utiliza para mapear el puerto 8081 del contenedor al puerto 8081 en la máquina local. De esta manera, se puede acceder a la aplicación desde un navegador o mediante una API.
+nombre-imagen: Se debe reemplazar con el nombre de la imagen que se creó en el paso anterior.
+
+3. Verificación:
+Con el contenedor ejecutándose, la aplicación estará accesible desde http://localhost:8081. Si todo está configurado correctamente, la aplicación debería estar en funcionamiento y conectada a los recursos necesarios, como la base de datos MySQL o cualquier otro servicio que la aplicación utilice.
