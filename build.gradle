@@ -2,40 +2,42 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.10'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
-	id 'jacoco'
+	id 'jacoco' // Plugin de JaCoCo para la cobertura de pruebas
 }
 
 group = 'co.edu.unisabana'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
-}
-
 repositories {
 	mavenCentral()
 }
+
 jacoco {
-	toolVersion = "0.8.8"
+	toolVersion = "0.8.8" // Versión de JaCoCo
 }
+
 test {
 	useJUnitPlatform()
-	finalizedBy jacocoTestReport
+	finalizedBy jacocoTestReport // Genera el reporte de JaCoCo después de las pruebas
 }
 
 jacocoTestReport {
-	dependsOn test // tests are required to run before generating the report
+	dependsOn test // Las pruebas deben ejecutarse antes de generar el reporte
+
+	reports {
+		xml.enabled false // Desactiva el reporte en XML
+		csv.enabled false // Desactiva el reporte en CSV
+		html.enabled true // Habilita el reporte en HTML
+	}
 
 	afterEvaluate {
 		classDirectories.setFrom(files(classDirectories.files.collect {
 			fileTree(dir: it, exclude: [
-					"**/dto/**",
-					"**/entity/*",
-					"**/model/*",
-					"**/jpa/*"
+					"**/dto/**",   // Excluye DTOs
+					"**/entity/*",  // Excluye entidades
+					"**/model/*",   // Excluye modelos
+					"**/jpa/*"      // Excluye JPA
 			])
 		}))
 	}
